@@ -9,12 +9,14 @@ import { UsersModule } from './modules/users/users.module'
 @Module({
   imports: [
     SequelizeModule.forRoot({
-      dialect: 'postgres',
-      host: '',
-      port: -1,
-      username: '',
-      password: '',
-      database: '',
+      dialect: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'nestjwt',
+      password: '1234Qwer!@#$',
+      database: 'nestjwt',
+      autoLoadModels: true,
+      synchronize: true,
       models: [User, RefreshToken],
     }),
     UsersModule,
